@@ -15,3 +15,30 @@ cout <<"This is "<< C << " centimeters";
 
 return 0;
 }
+
+
+
+/*
+#include <iostream>
+using namespace std;
+
+int main(){
+    
+    //
+    double a, M, C;
+
+    cout << "<<<<< Begin 38 >>>>>\n\n";
+    cout <<"Enter the number that should be converted from kilometers to meters and centimeters ";
+    cin >> a;                                           //enter km
+    
+    //calculations
+    M = 1000 * a;                                       //from km to meters
+    C = 100000 * a;                                     //from km to centimeters
+    
+    //
+    cout <<"This is "<< M << " meters" << endl;
+    cout <<"This is "<< C << " centimeters";
+
+    return 0;
+} 
+*/
