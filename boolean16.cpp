@@ -13,7 +13,7 @@ int main()
     
     bool res = (a % 2 == 0) && (a > 10 && a < 99);
     
-    cout<<boolalpha<<res;
+    cout << boolalpha << res;
 
     return 0;
 }
