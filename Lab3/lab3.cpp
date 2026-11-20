@@ -158,7 +158,7 @@ void task_23()
     bool in_red_circle = (x >= 0) && (y >= x) && (x * x + y * y <= r * r);  
 
     // Перевірка умови для третьої чверті (поза колом, в межах квадрата)
-    bool in_red_quadrat = (x <= 0) && (y <= x) && (x >= -a / 2.0) && (y >= -a / 2.0) && (x * x + y * y >= r * r);
+    bool in_red_quadrat = (x <= 0) && (y <= x) && y < 0 && (x * x + y * y >= r * r);
 
     // Загальний результат
     if (in_red_circle || in_red_quadrat) {
