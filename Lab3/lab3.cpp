@@ -146,7 +146,13 @@ void task_23()
         cout << "Wrong input!" << endl;
         return;
         }
-        
+        // Перевірка правильності введених розмірів
+     if (a <= 0 || r <= 0 || r > a / 2.0)
+     {
+        cout << "Wrong dimensions!" << endl;
+        return;
+     }
+
     // Перевірка умови для першої чверті (всередині кола)
     // використовую рівняння кола
     bool in_red_circle = (x >= 0) && (y >= x) && (x * x + y * y <= r * r);  
