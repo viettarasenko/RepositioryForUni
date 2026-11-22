@@ -23,6 +23,9 @@ void task_Integer23();
 
 int DigitCount(int K);
 void SortInc3(double &A, double &B, double &C);
+int FindResult(int N);
+bool CheckInput(int &a);
+void PrintResult(int x);
 
 int main()
 {
@@ -133,14 +136,50 @@ void task_Integer23()
 {
    
   int N;
-  int min;
+  
   
   cout<<"***********Integer23*************" << endl;
-  cout << "Введіть кількість секунд, що минуло с початку доби:" << endl;
-  cin >> N;
   
-  min = (N % 3600) / 60;
   
-  cout << "З початку останньої години минуло стільки хвилин: " << min;
+  if (CheckInput(N))
+  {
+      int res = FindResult(N);
+      PrintResult(res);
+  }
+  
 
+}
+
+bool CheckInput(int &a)
+{
+    cout << "Введіть кількість секунд, що минуло с початку доби:" << endl;
+    cin >> a;
+    
+    if (cin.fail() || a < 0)
+    {
+        cout << "Error!" << endl;
+        return false;
+    }
+    
+    bool ok = (a >= 0 && a <= 100);
+    if (!ok)
+    {
+        cout << "Error!" << endl;
+        return false;
+    }
+    
+    // якщо все окей, то бул чек резалт повертає тру
+    return true;
+}
+
+int FindResult(int n)
+{
+    int min;
+    min = (n % 3600) / 60;
+    return min;
+}
+
+void PrintResult(int x)
+{
+    cout << "З початку останньої години минуло стільки хвилин: " << x << endl;
 }
