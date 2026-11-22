@@ -21,6 +21,8 @@ void task_Proc12();
 хвилин, що минули з початку останньої години. */
 void task_Integer23();
 
+int DigitCount(int K)
+
 int main()
 {
     int menu;
@@ -47,9 +49,36 @@ int main()
 void task_Proc38()
 {
     cout<<"***********Proc38*************" << endl; 
+    int A, B, C, D, E;
+    cout << "Введіть додатні числа, що є в діапазоні між 1 і 999" << endl;
+    cin>> A >> B >> C >> D >> E;
     
+    
+    if (cin.fail() || A <= 0 || B <= 0 || C <= 0 || D <= 0 || E <= 0 || A >= 1000 || B >= 1000 || C >= 1000 || D >= 1000 || E >= 1000)
+    {
+        cout << "Error" << endl;
+        return;
+    }
+    
+    
+    cout << "В першому числі така кількість символів: " << DigitCount(A) << endl;
+    cout << "В другому числі така кількість символів: " << DigitCount(B) << endl;
+    cout << "В третьому числі така кількість символів: " << DigitCount(C) << endl;
+    cout << "В четвертому числі така кількість символів: " << DigitCount(D) << endl;
+    cout << "В п'ятому числі така кількість символів: " << DigitCount(E) << endl;
 }
 
+int DigitCount(int K)
+{
+    if (K < 10)
+    return 1;
+    
+    if (K < 100)
+    return 2;
+    
+    if (K < 1000)
+    return 3;
+}
 void task_Proc12()
 {
     cout<<"***********Proc12*************" << endl; 
@@ -70,3 +99,4 @@ void task_Integer23()
   cout << "З початку останньої години минуло стільки хвилин: " << min;
 
 }
+
