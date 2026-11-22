@@ -90,7 +90,7 @@ int DigitCount(int K)
 void task_Proc12()
 {
     cout << "***********Proc12*************" << endl;
-    cout << "Сортувальник чисел за порядком зростання" << endl;
+    cout << "Сортувальник чисел за порядком зростання (діапазон від -100 до 100)" << endl;
     double A1, B1, C1;
     double A2, B2, C2;
     
@@ -98,6 +98,13 @@ void task_Proc12()
     cin >> A1 >> B1 >> C1;
     cout << "Введіть наступні три числа для сортування:" << endl;
     cin >> A2 >> B2 >> C2;
+    
+    if (cin.fail() || A1 < -100 || B1 < -100 || C1 < -100 || A2 < -100 || B2 < -100 || C2 < -100 ||
+    A1 > 100 || B1 > 100 || C1 > 100 || A2 > 100 || B2 > 100 || C2 > 100)
+    {
+        cout << "Error! There are some mistakes with values" << endl;
+        return;
+    }
     
     SortInc3(A1, B1, C1);
     SortInc3(A2, B2, C2);
@@ -179,6 +186,10 @@ int FindResult(int n)
     return min;
 }
 
+void PrintResult(int x)
+{
+    cout << "З початку останньої години минуло стільки хвилин: " << x << endl;
+}
 void PrintResult(int x)
 {
     cout << "З початку останньої години минуло стільки хвилин: " << x << endl;
