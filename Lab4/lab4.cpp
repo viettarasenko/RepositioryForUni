@@ -21,7 +21,8 @@ void task_Proc12();
 хвилин, що минули з початку останньої години. */
 void task_Integer23();
 
-int DigitCount(int K)
+int DigitCount(int K);
+void SortInc3(double &A, double &B, double &C);
 
 int main()
 {
@@ -50,13 +51,13 @@ void task_Proc38()
 {
     cout<<"***********Proc38*************" << endl; 
     int A, B, C, D, E;
-    cout << "Введіть додатні числа, що є в діапазоні між 1 і 999" << endl;
+    cout << "Введіть додатні числа, що є в діапазоні між 0 і 10000 (не включаючи)" << endl;
     cin>> A >> B >> C >> D >> E;
     
     
-    if (cin.fail() || A <= 0 || B <= 0 || C <= 0 || D <= 0 || E <= 0 || A >= 1000 || B >= 1000 || C >= 1000 || D >= 1000 || E >= 1000)
+    if (cin.fail() || A <= 0 || B <= 0 || C <= 0 || D <= 0 || E <= 0 || A >= 10000 || B >= 10000 || C >= 10000 || D >= 10000 || E >= 10000)
     {
-        cout << "Error" << endl;
+        cout << "Error! There are some mistakes with values" << endl;
         return;
     }
     
@@ -78,17 +79,61 @@ int DigitCount(int K)
     
     if (K < 1000)
     return 3;
+    
+    if (K < 10000)
+    return 4;
 }
+
 void task_Proc12()
 {
-    cout<<"***********Proc12*************" << endl; 
+    cout << "***********Proc12*************" << endl;
+    cout << "Сортувальник чисел за порядком зростання" << endl;
+    double A1, B1, C1;
+    double A2, B2, C2;
+    
+    cout << "Введіть перші три числа для сортування:" << endl;
+    cin >> A1 >> B1 >> C1;
+    cout << "Введіть наступні три числа для сортування:" << endl;
+    cin >> A2 >> B2 >> C2;
+    
+    SortInc3(A1, B1, C1);
+    SortInc3(A2, B2, C2);
+    
+    cout << "Пересортоване перше число виглядає так: " << A1 << " " << B1 << " " << C1 << endl;
+    cout << "Пересортоване друге число виглядає так: " << A2 << " " << B2 << " " << C2 << endl;
+}
+
+void SortInc3(double &A, double &B, double &C)
+{
+    double firstNum;
+    
+    if (A > B)
+    {
+        firstNum = A;
+        A = B;
+        B = firstNum;
+    }
+    
+        if (A > C)
+    {
+        firstNum = A;
+        A = C;
+        C = firstNum;
+    }
+    
+        if (B > C)
+    {
+        firstNum = B;
+        B = C;
+        C = firstNum;
+    }
 }
 
 void task_Integer23()
 {
    
   int N;
-  double min;
+  int min;
   
   cout<<"***********Integer23*************" << endl;
   cout << "Введіть кількість секунд, що минуло с початку доби:" << endl;
@@ -99,4 +144,3 @@ void task_Integer23()
   cout << "З початку останньої години минуло стільки хвилин: " << min;
 
 }
-
