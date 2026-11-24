@@ -1,0 +1,18 @@
+Begin 44
+#include <iostream>
+#include <cmath> // call the bib to use sqrt(root sign) to have positive number
+using namespace std;
+
+int main() {
+        double a, b, res;
+        cout << "Введіть змінні для рівняння |a - b|" << endl;
+        cout << "a = ";
+        cin >> a;  // with cin you cannot use endl;
+        cout << "b =";
+        cin >> b;
+        res = sqrt((a - b) * (a - b)); // instead of "||" you do √(a - b)^2
+    
+        cout << "Модуль різниці: " << res << endl;
+    
+        return 0;
+}
