@@ -35,3 +35,23 @@ int main()
     
     return 0;
 }
+
+void task_9()
+{
+     cout<<"***********12*************" << endl;
+     
+     double r, x, y;
+     
+     //коммунікативний блок
+     cout << "This program checks if your point belongs to bright green spots (12 variant) on picture" << endl;
+     cout << "Enter the radius length of the circle:" << endl;
+     cin >> r;
+     cout << "Now please enter the x and y of the position you want confirm:" << endl;
+     cin >> x >> y;
+     
+     
+     if (cin.fail())
+        {
+        cout << "Wrong input!" << endl;
+        return;
+        }
