@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//завдання на малюнку
 void task_9();
 //завдання на малюнку
 void task_20();
@@ -117,5 +118,42 @@ void task_20()
 
 void task_29()
 {
+    cout<<"***********29*************" << endl;
+    
+    //декларація
+    int n = 1, M;
+    double Sum, x;
+    double e = 1E-10;
+    double g = 1E+5;
+    
+    //комунікативний блок
+    cout << "Enter x" << endl;
+    cin >> x;
+
+    //комунікативний блок
+    cout << "Enter M (output with step M) " << endl;
+    cin >> M;
+    
+    while (cin.fail() || M < 1)
+    {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Error! Enter M again: " << endl;
+        cin >> M;
+    }
+    
+    double rivn = pow(pow(x, n) + 1, 0.5) / pow(pow(x, n) + n, 0.5);
+    
+    //підрахунок
+    while (abs(rivn) >= e && abs(rivn) <= g)
+    {
+        if (n % M == 0)
+        {
+            cout << "n = " << n << "equation = " << rivn << "summe = " << Sum << endl;
+        }
+        n++;
+        rivn = pow(pow(x, n) + 1, 0.5) / pow(pow(x, n) + n, 0.5);
+        Sum += rivn;
+    }
     
 }
