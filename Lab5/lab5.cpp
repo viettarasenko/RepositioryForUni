@@ -45,12 +45,12 @@ void task_9()
      
      //коммунікативний блок
      cout << "This program checks if your point belongs to bright green spots (9 variant) on picture" << endl;
-     cout << "Enter theside length of the square:" << endl;
+     cout << "Enter the side length of the square:" << endl;
      cin >> a;
      cout << "Now please enter the x and y of the position you want confirm:" << endl;
      cin >> x >> y;
      
-     
+    //перевірка умови
     if (cin.fail() || a <= 0)
     {
         cout << "Wrong input!" << endl;
@@ -71,7 +71,48 @@ void task_9()
 
 void task_20()
 {
+    cout<<"***********20*************" << endl;
     
+    //декларація
+    int n;
+    double x, k;
+    double S = 0;
+
+    //комунікативний блок
+    cout << "Enter x" << endl;
+    cin >> x;
+    
+    //перевірка умови
+    if (fabs(-1 + cos(x)) >= 1)                                                                 //fabs is good for floatig numbers instead of abs
+    {
+        cout << "The condition is not satisfied!" << endl;
+        return;
+    }
+    
+    //комунікативний блок
+    cout << "Enter n (the number of terms to be calculated)" << endl;
+    cin >> n;
+    
+    if (cin.fail() || n <= 0)
+    {
+        cout << "Wrong input!" << endl;
+        return;
+    }
+    
+    
+    
+    //підрахунок
+    for (int k = 1; k <= n; k++) //why <=
+    {
+        double above_part = pow(-1, k) * pow(-1 + cos(x), k);
+        double down_part = k;
+        S -= above_part/down_part;
+    }
+    
+    //виведення
+    cout << "Machine is thinking. Probably it will have big thoughts." << endl;
+    cout << "Here is your sume: " << S << endl;
+
 }
 
 void task_29()
